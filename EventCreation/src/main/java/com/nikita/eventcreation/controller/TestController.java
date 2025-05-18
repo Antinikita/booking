@@ -30,4 +30,8 @@ public class TestController {
     public EventCreationDTO details(@PathVariable("id") long id) {
         return eventService.getEventCreationDTO(id);
     }
+    @GetMapping("/{id}")
+    public Event getEventCreationDTO(@PathVariable("id") long id) {
+        return eventRepo.findById(id);
+    }
 }

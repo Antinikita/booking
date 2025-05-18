@@ -29,4 +29,8 @@ public class TestController {
     public List<Client> getAll() {
         return clientRepository.findAll();
     }
+    @GetMapping("/{id}")
+    public Client getClient(@PathVariable long id) {
+        return clientRepository.findById(id).orElse(null);
+    }
 }
